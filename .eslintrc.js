@@ -1,7 +1,6 @@
 module.exports = {
   "env": {
     "commonjs": true,
-    'ecmaVersion': true,
     "node": true
   },
   "extends": [
