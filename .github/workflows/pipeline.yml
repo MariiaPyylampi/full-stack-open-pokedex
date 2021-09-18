@@ -33,3 +33,6 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "mypokeapp"
           heroku_email: "mariia.pyylampi@gmail.com"
+          healthcheck: "https://mypokeapp.herokuapp.com/health"
+          checkstring: "ok"
+          delay: 5
