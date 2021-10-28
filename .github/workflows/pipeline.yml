@@ -42,7 +42,7 @@ jobs:
       - name: commit messages
         env:
           COMMIT_MESSAGES: ${{ toJson(github.event.commits.*.message) }}
-          COMMIT_JOINED: ${{ COMMIT_MESSAGED.join() }}
+          COMMIT_JOINED: ${{ COMMIT_MESSAGES.join() }}
         run: echo "$COMMIT_MESSAGES"
         run: echo "$COMMIT_JOINED"
       - uses: actions/checkout@v2
