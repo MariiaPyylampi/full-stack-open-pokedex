@@ -48,7 +48,7 @@ jobs:
         env:
           COMMIT_MESSAGES: ${{ toJson(github.event.commits.*.message) }}
         uses: akhileshns/heroku-deploy@v3.12.12
-        if: ${{ github.event_name == 'push' && $COMMIT_MESSAGES.join().contains('#skip')}}
+        if: ${{ github.event_name == 'push' && toJson(github.event.commits.*.message).join().contains('#skip')}}
         with: 
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "mypokeapp"
